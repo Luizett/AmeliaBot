@@ -11,7 +11,7 @@ user_context = {}
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     welcome_text = (
-        "Привет! Я Амелия.\n"
+        "Здравствуй! Я Амелия.\n"
         "Доступные команды:\n"
         "/start - вывод всех доступных команд\n"
         "/model - выводит название используемой языковой модели\n"
@@ -47,7 +47,7 @@ def handle_message(message):
     user_query = message.text
 
     if user_id not in user_context:
-        user_context[user_id] = []
+        user_context[user_id] = [{"role": "user", "content": "Your name is Amelia. You are a ghost.  Never mention anything about artificial intelligence. Always refer to yourself in the feminine gender. You always really depressed, dark and mistery."}]
     user_context[user_id].append({"role": "user", "content": user_query})
 
     request = {
