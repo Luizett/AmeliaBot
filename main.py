@@ -3,7 +3,12 @@ import requests
 import jsons
 from Class_ModelResponse import ModelResponse
 
-API_TOKEN = '8184467004:AAEnNONXVev_ObhuHk0kb7_YDS9Dac-hFeQ'
+import os 
+from dotenv import load_dotenv 
+ 
+load_dotenv()
+
+API_TOKEN = os.getenv('API_TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
 
 user_context = {}
